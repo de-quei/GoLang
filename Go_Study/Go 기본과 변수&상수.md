@@ -36,8 +36,61 @@
 * 변수는 **var** / 상수는 **const**로 선언합니다.
   1. 변수
        * 변수가 <U>단수개</U>일 때
-         * 기본선언형 : **var 변수명 데이터타입** ( Ex. var a int )
-         * 선언 및 초기화형 : **var 변수명 데이터타입 = 값** ( Ex. var f float32 = 11.0)
+         * 기본선언형 : **var 변수명 데이터타입** 
+         ```go
+         var int a
+         ```
+         * 선언 및 초기화형 : **var 변수명 데이터타입 = 값**
+         ```go
+         var f float32 = 11.0
+         ```
        * 변수가 <U>복수개</U>일 때
-         * 동일한 타입 변수가 여러개 존재할 경우 : **var 변수명1, 변수명2, 변수명 3... 데이터타입** ( Ex. var i, j, k int )
-         * 선언 및 초기화형 : **var 변수명1, 변수명2, 변수명3... 데이터타입 = 값1, 값2, 값3...** ( Ex. var i, j, k int = 1, 2, 3 )
+         * 동일한 타입 변수가 여러개 존재할 경우 : **var 변수명1, 변수명2, 변수명 3... 데이터타입** 
+         ```go
+         var i, j, k int
+         ```
+         * 선언 및 초기화형 : **var 변수명1, 변수명2, 변수명3... 데이터타입 = 값1, 값2, 값3...** 
+         ```go
+         var i, j, k int = 1, 2, 3
+         ```
+         
+  2. 상수
+       * 변수가 <U>단수개</U>일 때
+         * 선언 및 초기화 : **const 변수명 데이터타입 = 값**
+         ```go
+         const c int = 10
+         ```
+       * 변수가 <U>복수개</U>일 때
+         * 묶어서 지정할 수 있다.
+         ```go
+         const (
+            Visa = "Visa"
+            Master = "MasterCard"
+            Amex = "American Express"
+          )
+         ```
+       * **<U>타입추론기능</U>** → 데이터 타입을 쓰지 않아도 값을 보고 타입을 추론할 수 있다.
+       ```go
+       const i = 1
+       const s = "ABC"
+       ```
+       * **iota** 기능
+         * 상수값에 0부터 1, 2... 순차적으로 부여하기 위해 iota라는 identifier를 부여할 수 있다.
+         ```go
+         const (
+          Apple = iota // 0
+          Grape        // 1
+          Orange       // 2
+          )
+         ```
+
+    3. 예약어(identifier)
+       * Go는 다음과 같은 25개의 예약 키워드를 갖는다. 다른 언어와 같이 이 예약어들은 변수명, 상수명.. 등으로 사용할 수 없다.
+         
+          | break | default | func | interface | select |
+          |---|---|---|---|---|
+          | case | defer | go | map | struct |
+          | chan | else | goto | package | switch |
+          | const | fallthrough | if | range | type |
+          | continue | for | import | return | var |
+         
