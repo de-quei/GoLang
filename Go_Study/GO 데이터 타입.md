@@ -1,1 +1,40 @@
+# 3. Go 데이터 타입
+> 공부 교재 👉🏻 [예제로 배우는 Go 프로그래밍](http://golang.site/)
+> </br>
+> OS : Windows 10 / 개발환경 : VSCode>
 
+</br>
+
+## 1. Go의 원시타입
+* Go는 다음과 같은 기본 타입을 가지고 있습니다.
+  
+    1. boolean 타입
+        * bool
+    2. 문자열 타입
+        * string ( string은 한번 생성되면 수정될 수 없는 immutable(불변) 타입 )
+    3. 정수형 타입
+        * int, int8, int16, int32, int64 / uint, uint8, uint16, uint32, uint64 / uintptr
+    4. float / 복소수 타입
+        * float32, float64 / complex64, complex128
+    5. 기타 타입
+        * byte ( unit8괃 동일하며, 바이트코드에 사용된다. )
+        * rune ( int32와 동일하며, 유니코드 코드포인트에 사용된다. )
+            <details>
+            <summary>코드포인트란?</summary>
+            <div markdown="1">
+                코드포인트란 문자에 부여한 고유한 숫자값입니다. 유니코드라는게 원래 문자 하나 당 고유한 숫자를 부여한 일종의 표입니다. 이 때 문자마다 고유한 숫자를 코드포인트라고 정의합니다.
+            </div>
+            </details>
+
+## 2. 문자열
+* 문자열 리터럴은 Back Quote('') 혹은 이중인용부호("")를 사용할 수 있습니다.
+
+    1. Back Quote ('')
+        * Back Quote로 둘러싸인 문자열을 Raw String Literal이라고 부르는데, 이 안에 있는 문자열들은 별도로 해석되지 않고 Raw String값을 갖습니다. 
+        * **예를 들면** 문자열 안에 \n(개행 문자열)이 있을 경우, New Line(개행)으로 해석되지 않습니다.
+        * 복수 라인의 문자열을 표현할 때 자주 사용됩니다.
+        
+    2. 이중인용부호 ("")
+        * 이중인용부호(" ")로 둘러 싸인 문자열은 Interpreted String Literal이라 부르는데, 복수 라인에 걸쳐 쓸 수 없으며, 인용부호 안의 Escape 문자열들은 특별한 의미로 해석됩니다. 
+        * **예를 들어**, 문자열 안에 \n(개행 문자열) 이 있을 경우 이는 New Line(개행)으로 해석됩니다.
+        * 이중인용부호를 이용해 문자열을 여러 라인에 걸쳐 쓰기 위해서는 + 연산자를 이용해 결합하여 사용한다.
